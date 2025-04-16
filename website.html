@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRIPKICKS</title>
+    <link rel="icon" href="DRIP (2).png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.7.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@700&family=Poppins:wght@500;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+        <header>
+            <a href="website.html" class="logo"><img src="DRIP (2).png" alt="img not visible"></a>
+            <ul class="navmenu">
+                <li><a href="website.html">HOME</a></li>
+                <li><a href="shop.html" class="shop-dropdown">SHOP</a>
+                    <ul class="dropdown-content">
+                        <li><a href="mens.html" onclick="filterProducts('male')">Men's</a></li>
+                        <li><a href="#" onclick="filterProducts('female')">Women's</a></li>
+                        <li><a href="#" onclick="filterProducts('kids')">Kid's</a></li>
+                    </ul>
+                </li>
+                <li><a href="#products" class="product-dropdown">PRODUCTS</a>
+                    <ul class="dropdown-content">
+                        <li><a href="adidas.html" onclick="filterProducts('Adidas')">Adidas</a></li>
+                        <li><a href="puma.html" onclick="filterProducts('Puma')">Puma</a></li>
+                        <li><a href="#" onclick="filterProducts('Nike')">Nike</a></li>
+                        <li><a href="#" onclick="filterProducts('New balance')">New balance</a></li>
+                        <li><a href="#" onclick="filterProducts('Reebok')">Reebok</a></li>
+                    </ul>
+                </li>
+                <li><a href="#client-reviews">CUSTOMIZE</a></li>
+                <li><a href="#update-news">NEW ARRIVALS</a></li>
+            </ul>
+                <div class="nav-icon">
+                    <a href="#searchBar"><i class='bx bx-search'></i></a>
+                    <a href="login.html" target="_blank"><i class='bx bx-user' ></i></a>
+                    <a href="cart2.html" id="cart-icon"><i class='bx bx-cart' ></i></a>
+                    <div class="bx bx-menu" id="menu-icon"></div>
+                </div>
+                <form class="search-form">
+                    <input type="search" id="search-box" placeholder="Search Here....">
+                </form>
+        </header>
+        <section class="main-home">
+            <div class="main-text">
+                 <h5>Winter Collection</h5>
+                 <h1>New Summer <br> Collection</h1>
+                 <p>There's Nothing Like Trend</p>
+                 <a href="#" class="main-btn">Shop Now<i class='bx bx-right-arrow-alt'></i></a>
+        </div>
+        <div class="down-arrow">
+            <a href="#trending" class="down"><i class='bx bx-down-arrow-alt' ></i></a>    
+        </div>
+        </section>
+        <!-- trending products section-->
+        <section class="trending-products" id="trending">
+          <div class="center-text">
+            <h2>Our Trending <span> Products </span></h2>
+          </div>  
+          <div class="products" id="products">
+            <div class="row">
+                <img src="1691700281-image.png" alt="">
+                <div class="product-text"data-product-id="1">
+                    <h5>Sale</h5>
+                </div>
+                    <div class="heart-icon">
+                        <i class='bx bx-heart' ></i>
+                </div>
+                <div class="rating">
+                <i class='bx bx-star' ></i>
+                <i class='bx bx-star' ></i>
+                <i class='bx bx-star' ></i>
+                <i class='bx bx-star' ></i>
+                <i class='bx bxs-star-half' ></i>
+            </div>
+            <div class="price">
+                <h4>Nike Mens Dunk low</h4>
+                <p>MRP : ₹ 9 195.00</p>
+                <button class="add-to-cart-btn" onclick="addToCart(1)">Add to Cart</button>
+            </div>
+        </div>
+        <div class="row">
+            <img src="1691696913-image.png" alt="">
+            <div class="product-text"data-product-id="2">
+                <h5>Sale</h5>
+            </div>
+                <div class="heart-icon">
+                    <i class='bx bx-heart' ></i>
+            </div>
+            <div class="rating">
+            <i class='bx bx-star' ></i>
+            <i class='bx bx-star' ></i>
+            <i class='bx bx-star' ></i>
+            <i class='bx bx-star' ></i>
+            <i class='bx bxs-star-half' ></i>
+        </div>
+        <div class="price">
+            <h4>Jordan Nu Retro 1 Low </h4>
+            <p>MRP : ₹ 9 195.00</p>
+            <button class="add-to-cart-btn" onclick="addToCart(2)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="row">
+        <img src="1691696661-image.png" alt="">
+        <div class="product-text"data-product-id="3">
+            <h5>Sale</h5>
+        </div>
+            <div class="heart-icon">
+                <i class='bx bx-heart' ></i>
+        </div>
+        <div class="rating">
+        <i class='bx bx-star' ></i>
+        <i class='bx bx-star' ></i>
+        <i class='bx bx-star' ></i>
+        <i class='bx bx-star' ></i>
+        <i class='bx bxs-star-half' ></i>
+    </div>
+    <div class="price">
+        <h4>Nike Dunk Low Retro Premium </h4>
+        <p>MRP : ₹ 15,195.00</p>
+        <button class="add-to-cart-btn" onclick="addToCart(3)">Add to Cart</button>
+    </div>
+</div>
+<div class="row">
+    <img src="1691697035-image.png" alt="">
+    <div class="product-text"data-product-id="4">
+        <h5>Sale</h5>
+    </div>
+        <div class="heart-icon">
+            <i class='bx bx-heart' ></i>
+    </div>
+    <div class="rating">
+    <i class='bx bx-star' ></i>
+    <i class='bx bx-star' ></i>
+    <i class='bx bx-star' ></i>
+    <i class='bx bx-star' ></i>
+    <i class='bx bxs-star-half' ></i>
+</div>
+<div class="price">
+    <h4>Air Jordan 1 Low </h4>
+    <p>MRP : ₹ 15,195.00</p>
+    <button class="add-to-cart-btn" onclick="addToCart(4)">Add to Cart</button>
+</div>
+</div>
+<div class="row">
+    <img src="1691697157-image.png" alt="">
+    <div class="product-text"data-product-id="5">
+        <h5>Sale</h5>
+    </div>
+        <div class="heart-icon">
+            <i class='bx bx-heart' ></i>
+    </div>
+    <div class="rating">
+    <i class='bx bx-star' ></i>
+    <i class='bx bx-star' ></i>
+    <i class='bx bx-star' ></i>
+    <i class='bx bx-star' ></i>
+    <i class='bx bxs-star-half' ></i>
+</div>
+<div class="price">
+    <h4>Air Jordan 1 Low SE </h4>
+    <p>MRP : ₹ 15,195.00</p>
+    <button class="add-to-cart-btn" onclick="addToCart(5)">Add to Cart</button>
+</div>
+</div>
+<div class="row">
+    <img src="dunk low retro premium.png" alt="">
+    <div class="product-text"data-product-id="6">
+        <h5>Sale</h5>
+    </div>
+        <div class="heart-icon">
+            <i class='bx bx-heart' ></i>
+    </div>
+    <div class="rating">
+    <i class='bx bx-star' ></i>
+    <i class='bx bx-star' ></i>
+    <i class='bx bx-star' ></i>
+    <i class='bx bx-star' ></i>
+    <i class='bx bxs-star-half' ></i>
+</div>
+<div class="price">
+    <h4>Air Jordan 1 Mid</h4>
+    <p>MRP : ₹ 20,195.00</p>
+    <button class="add-to-cart-btn" onclick="addToCart(6)">Add to Cart</button>
+</div>
+</div>
+<div class="row">
+    <img src="jumpmanmvp.png" alt="">
+    <div class="product-text"data-product-id="7">
+        <h5>Sale</h5>
+    </div>
+        <div class="heart-icon">
+            <i class='bx bx-heart' ></i>
+    </div>
+    <div class="rating">
+    <i class='bx bx-star' ></i>
+    <i class='bx bx-star' ></i>
+    <i class='bx bx-star' ></i>
+    <i class='bx bx-star' ></i>
+    <i class='bx bxs-star-half' ></i>
+</div>
+<div class="price">
+    <h4>Nike Air Force 1 '07</h4>
+    <p>MRP : ₹ 11,195.00</p>
+    <button class="add-to-cart-btn" onclick="addToCart(7)">Add to Cart</button>
+</div>
+</div>
+<div class="row">
+    <img src="nike air force 1'07.png" alt="">
+    <div class="product-text"data-product-id="8">
+        <h5>Sale</h5>
+    </div>
+        <div class="heart-icon">
+            <i class='bx bx-heart' ></i>
+    </div>
+    <div class="rating">
+    <i class='bx bx-star' ></i>
+    <i class='bx bx-star' ></i>
+    <i class='bx bx-star' ></i>
+    <i class='bx bx-star' ></i>
+    <i class='bx bxs-star-half' ></i>
+</div>
+<div class="price">
+    <h4>Nike Court Vision Low Next Nature </h4>
+    <p>MRP : ₹ 16,125.00</p>
+    <button class="add-to-cart-btn" onclick="addToCart(8)">Add to Cart</button>
+</div>
+</div>
+<div class="row">
+    <img src="nike dunk low.png" alt="">
+    <div class="product-text" data-product-id="9"> 
+        <h5>Sale</h5>
+    </div>
+        <div class="heart-icon">
+            <i class='bx bx-heart' ></i>
+    </div>
+    <div class="rating">
+    <i class='bx bx-star' ></i>
+    <i class='bx bx-star' ></i>
+    <i class='bx bx-star' ></i>
+    <i class='bx bx-star' ></i>
+    <i class='bx bxs-star-half' ></i>
+</div>
+<div class="price">
+    <h4>NikeCourt Legacy </h4>
+    <p>MRP : ₹ 22,195.00</p>
+    <button class="add-to-cart-btn" onclick="addToCart(9)">Add to Cart</button>
+</div>
+</div>
+    </div>
+        </section>
+        <!--client-review-section-->
+        
+        <section class="client-reviews" id="client-reviews">
+            <div class="reviews">
+                <h3>Client <span>Reviews</span></h3>
+                        <img src="IMG_8498.png" alt="#">
+                        <p>“I recently had the pleasure of shopping on Dripkicks.com for a new pair of running shoes,
+                             and I must say, my experience was nothing short of fantastic.”</p>
+                            <h2>Devansh Dwivedi</h2>
+                            <p>Student</p>
+                        </div>
+             </div>
+        </section>
+
+        <!--update-news-section-->
+        <section class="update-news" id="update-news">
+            <div class="up-center-text">
+                <h2>New <span>Arrivals</span></h2>
+            </div>
+            <div class="update-cart">
+               <div class="cart">
+                <img src="image5.png" alt="">
+                <h5>22 Dec 2023</h5>
+                <h4>Let's Start bring sale on this Winter.</h4>
+                <p>“Neque porro quisquam est, qui dolorem ipsum quia 
+                    dolor sit amet, consectetur, adipisci velit,
+                     sed quia non numquam eius modi tempora incidunt ut labore et 
+                    dolore magnam aliquam quaerat voluptatem.</p>
+                    <h6>Continue Reading..</h6>
+               </div> 
+               <div class="cart">
+                <img src="1691697157-image.png" alt="">
+                <h5>22 Dec 2023</h5>
+                <h4>Let's Start bring sale on this Winter.</h4>
+                <p>“Neque porro quisquam est, qui dolorem ipsum quia 
+                    dolor sit amet, consectetur, adipisci velit,
+                     sed quia non numquam eius modi tempora incidunt ut labore et 
+                    dolore magnam aliquam quaerat voluptatem.</p>
+                    <h6>Continue Reading..</h6>
+               </div> 
+               <div class="cart">
+                <img src="image6.png" alt="">
+                <h5>22 Dec 2023</h5>
+                <h4>Let's Start bring sale on this Winter.</h4>
+                <p>“Neque porro quisquam est, qui dolorem ipsum quia 
+                    dolor sit amet, consectetur, adipisci velit,
+                     sed quia non numquam eius modi tempora incidunt ut labore et 
+                    dolore magnam aliquam quaerat voluptatem.</p>
+                    <h6>Continue Reading..</h6>
+               </div> 
+            </div>
+        </section>
+        <!--contact-section-->
+        <section class="contact">
+            <div class="contact-info">
+                <div class="first-info">
+                    <h4>Contact</h4>
+                    <p>114 Kavi Nagar,<br>Ghaziabad,UttarPradesh</p>
+                    <p>(+91) 9134657838</p>
+                    <p>dripkicks1@gmail.com</p>
+                    <div class="social-icon">
+                        <a href="https://www.facebook.com/" target="_blank"><i class='bx bxl-facebook'></i></a>
+                        <a href="https://twitter.com/i/flow/login" target="_blank"><i class='bx bxl-twitter' ></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"><i class='bx bxl-instagram' ></i></a>
+                        <a href="https://www.youtube.com/" target="_blank"><i class='bx bxl-youtube' ></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank"><i class='bx bxl-linkedin' ></i></a>
+                    </div>
+                </div>
+                <div class="second-info">
+                    <h4>Support</h4>
+                    <p>Contact us</p>
+                    <p>About page</p>
+                    <p><a href="size.html">Size Guide</a></p>
+                    <p>Shopping & Returns</p>
+                    <p>Privacy</p>
+                </div>
+                <div class="third-info">
+                    <h4>Shop</h4>
+                    <p>Men's Shopping</p>
+                    <p>Women's Shopping</p>
+                    <p>Kid's</p>
+                    <p>Apparels</p>
+                    <p>Discount</p>
+                </div>
+                <div class="fourth-info">
+                    <h4>Company</h4>
+                    <p>About</p>
+                    <p>Blog</p>
+                    <p>Affiliate Program</p>
+                    <p>Login</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="end-text">
+            <p>Copyright © @2023. All Rights Reserved.</p>
+        </div>
+        <script src="java.js"></script>
+        <script src="shop.js"></script>
+        <script src="wrapper.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+.search-container {
+    position: relative;
+}
+
+#searchBar {
+    padding: 8px;
+    display: none;
+}
+
+#searchIcon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #fff;
+}
+
+#searchBar.show {
+    display: block;
+}
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <input type="text" id="searchBar" placeholder="Search...">
+        <button id="searchIcon">&#128269;</button>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.content');
+            const searchBar = document.getElementById('searchBar');
+            const searchIcon = document.getElementById('searchIcon');
+
+            // ... (Previous code for tab switching)
+
+            // Toggle search bar visibility
+            searchIcon.addEventListener('click', function () {
+                searchBar.classList.toggle('show');
+            });
+        });
+    </script>
+</body>
+</html>

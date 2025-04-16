@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>DripKicks - Home</title>
+</head>
+<body>
+    <header>
+        <h1>DripKicks</h1>
+        <nav>
+            <ul>
+                <li class="tab" id="homeTab"><a href="#">Home</a></li>
+                <li class="tab" id="shopTab"><a href="#">Shop</a></li>
+                <li class="tab" id="aboutTab"><a href="#">About</a></li>
+                <li class="tab" id="contactTab"><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="content" id="homeContent">
+        <h2>Welcome to DripKicks!</h2>
+        <p>This is the home content. You can customize this section with featured shoes, announcements, or any other information you want to highlight.</p>
+    </section>
+
+    <section class="content" id="shopContent" style="display: none;">
+        <h2>Shop Now</h2>
+        <p>Explore our amazing collection of sneakers available for purchase.</p>
+    </section>
+
+    <section class="content" id="aboutContent" style="display: none;">
+        <h2>About Us</h2>
+        <p>Learn more about DripKicks and our mission to revolutionize the shoe reselling industry.</p>
+    </section>
+
+    <section class="content" id="contactContent" style="display: none;">
+        <h2>Contact Us</h2>
+        <p>Have questions or feedback? Reach out to us!</p>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function () {
+                    // Hide all content sections
+                    contents.forEach(content => {
+                        content.style.display = 'none';
+                    });
+
+                    // Show the corresponding content section
+                    const contentId = tab.id.replace('Tab', 'Content');
+                    document.getElementById(contentId).style.display = 'block';
+
+                    // Remove 'active' class from all tabs
+                    tabs.forEach(t => {
+                        t.classList.remove('active');
+                    });
+
+                    // Add 'active' class to the clicked tab
+                    tab.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

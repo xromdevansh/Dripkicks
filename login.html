@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DripKicks - Shoe Store</title>
+    <style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    background-image: url('air6.png'); /* Texture background */
+    background-size: cover; /* Adjusts the background size to cover the entire body */
+    background-position: center; /* Aligns the background image to the center */
+}
+
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .switch-form {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .switch-form a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        #login-form img {
+            width: 150px;
+            height: auto;
+            border-radius: 5px;
+            padding: -50px;
+        }
+    </style>
+</head>
+<body>
+    <form id="login-form">
+        <img src="DRIP (2).png" alt="">
+        
+        <label for="login-email">Email:</label>
+        <input type="email" id="login-email" name="login-email" required>
+
+        <label for="login-password">Password:</label>
+        <input type="password" id="login-password" name="login-password" required>
+
+        <label for="login-mobile">Mobile Number:</label>
+        <input type="text" id="login-mobile" name="login-mobile" required>
+
+        <button type="button" onclick="sendOTP('login')">Send OTP</button>
+
+        <label for="login-otp">OTP:</label>
+        <input type="text" id="login-otp" name="login-otp" required>
+
+        <button type="submit">Login</button>
+
+        <div class="switch-form">
+            Don't have an account? <a href="#" onclick="switchForm('signup')">Sign up here</a>
+        </div>
+    </form>
+
+    <form id="signup-form" style="display: none;">
+        <h2>Sign up for DripKicks</h2>
+        <label for="signup-name">Name:</label>
+        <input type="text" id="signup-name" name="signup-name" required>
+
+        <label for="signup-email">Email:</label>
+        <input type="email" id="signup-email" name="signup-email" required>
+
+        <label for="signup-password">Password:</label>
+        <input type="password" id="signup-password" name="signup-password" required>
+
+        <label for="signup-mobile">Mobile Number:</label>
+        <input type="text" id="signup-mobile" name="signup-mobile" required>
+
+        <button type="button" onclick="sendOTP('signup')">Send OTP</button>
+
+        <label for="signup-otp">OTP:</label>
+        <input type="text" id="signup-otp" name="signup-otp" required>
+
+        <button type="submit">Sign Up</button>
+
+        <div class="switch-form">
+            Already have an account? <a href="#" onclick="switchForm('login')">Login here</a>
+        </div>
+    </form>
+
+    <script>
+        function switchForm(formType) {
+            if (formType === 'login') {
+                document.getElementById('login-form').style.display = 'block';
+                document.getElementById('signup-form').style.display = 'none';
+            } else {
+                document.getElementById('login-form').style.display = 'none';
+                document.getElementById('signup-form').style.display = 'block';
+            }
+        }
+
+        function sendOTP(formType) {
+            var mobileField = formType === 'login' ? document.getElementById('login-mobile') : document.getElementById('signup-mobile');
+            var mobileNumber = mobileField.value;
+
+            fetch('https://api.smsprovider.com/sendotp', {
+                method: 'POST',
+                body: JSON.stringify({ mobile: mobileNumber }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('OTP sent successfully!');
+                } else {
+                    alert('Failed to send OTP. Please try again later.');
+                }
+            })
+            .catch(error => {
+                console.error('Error sending OTP:', error);
+                alert('An error occurred while sending OTP. Please try again later.');
+            });
+        }
+    </script>
+</body>
+</html>
